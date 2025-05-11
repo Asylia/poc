@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Fonts
+@font-face {
+  font-family: 'Sofia';
+  font-weight: 200;
+  src: url('./fonts/SofiaPro-Light.otf')
+}
+
+@font-face {
+  font-family: 'Sofia';
+  font-weight: 700;
+  src: url('./fonts/SofiaPro-Bold.otf')
+}
+
+@font-face {
+  font-family: 'Sofia';
+  font-weight: 400;
+  src: url('./fonts/SofiaPro-Regular.otf')
+}
+
+//@import 'tippy.js/dist/backdrop.css';
+//@import 'tippy.js/animations/shift-away.css';
+
+@layer base {
+
+  html {
+
+    font-family: Sofia, Tahoma, Geneva, Verdana, sans-serif;
+
+    #chat {
+
+      strong {
+        @apply block my-1;
+      }
+
+      //p {
+      //  @apply mb-2 ;
+      //}
+      //
+      //ul {
+      //  @apply pl-4 mb-2;
+      //  li {
+      //    list-style-type: decimal;
+      //  }
+      //}
+
+    }
+
+  }
+
+
+}
+
+.bg-asyl {
+  background: linear-gradient(to right, #2563eb, #8b5cf6);
+}
+
+.bg-asyl-hover {
+  &:hover {
+    background: linear-gradient(to right, #2563eb, #8b5cf6);
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #2563eb, #8b5cf6); /* Zmeňte toto na požadovaný gradient */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+
+// list
+.list-move, /* apply transition to moving elements */
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.list-leave-active {
+  position: absolute;
+}
+
+// modal
+.modal-enter-active, .modal-leave-active {
+  transition: all 0.5s ease;
+}
+
+.modal-enter-from, .modal-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.modal-fade-enter,
+.modal-fade-leave-to {
+  opacity: 0;
+}
+
+// router
+.zoom-enter-active, .zoom-leave-active {
+  transition: all .6s ease;
+}
+
+.zoom-enter-from, .zoom-leave-to {
+  transform: scale(0.95);
+  opacity: 0;
+}
